@@ -12,8 +12,9 @@ Modern dark-themed analytics portal for managing AI code reviews, MCP tool integ
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-8b5cf6)](LICENSE)
+[![Website](https://img.shields.io/badge/Live-codereview.rxcloud.group-8b5cf6?logo=vercel&logoColor=white)](https://codereview.rxcloud.group)
 
-[Live Demo](#getting-started) &nbsp;&middot;&nbsp; [Features](#features) &nbsp;&middot;&nbsp; [Tech Stack](#tech-stack) &nbsp;&middot;&nbsp; [Getting Started](#getting-started) &nbsp;&middot;&nbsp; [Architecture](#architecture)
+[Live Demo](https://codereview.rxcloud.group) &nbsp;&middot;&nbsp; [Features](#features) &nbsp;&middot;&nbsp; [Tech Stack](#tech-stack) &nbsp;&middot;&nbsp; [Getting Started](#getting-started) &nbsp;&middot;&nbsp; [Architecture](#architecture)
 
 </div>
 
