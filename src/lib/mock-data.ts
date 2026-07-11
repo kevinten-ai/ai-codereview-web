@@ -209,12 +209,12 @@ export function generateHeatmapData(): number[][] {
   for (let w = 0; w < weeks; w++) {
     const week: number[] = [];
     for (let d = 0; d < 7; d++) {
-      // Simulate realistic activity patterns
-      const base = Math.random();
+      // Keep demo data stable so server and client render identical markup.
+      const base = ((w * 17 + d * 31 + 11) % 100) / 100;
       const isWeekend = d >= 5;
       const activity = isWeekend
-        ? base < 0.6 ? 0 : Math.floor(Math.random() * 3) + 1
-        : base < 0.15 ? 0 : Math.floor(Math.random() * 5) + 1;
+        ? base < 0.6 ? 0 : ((w * 13 + d * 7) % 3) + 1
+        : base < 0.15 ? 0 : ((w * 19 + d * 11) % 5) + 1;
       week.push(activity);
     }
     data.push(week);
