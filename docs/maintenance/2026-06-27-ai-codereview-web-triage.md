@@ -23,5 +23,5 @@
 
 ## Follow-Up
 
-- Investigate `live-codereview.rxcloud.group`, which is still marked CHECK in the domain probe.
+- `live-codereview.rxcloud.group` was investigated on 2026-07-11: Vercel recognizes the parent domain, but the hostname has no DNS record and is not assigned as an alias to this project. The canonical `codereview.rxcloud.group` hostname is healthy.
 - Decide when mock data should be replaced by production API calls.
