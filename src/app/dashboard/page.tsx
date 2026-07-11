@@ -118,7 +118,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Bento Row 1: Stats ── */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {stats.map((s, i) => (
           <div key={s.label} className={`card p-4 animate-slide-up stagger-${i + 1}`}>
             <div className="flex items-start justify-between mb-3">
@@ -136,9 +136,9 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Bento Row 2: Chart + Heatmap ── */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid min-w-0 grid-cols-1 gap-3 xl:grid-cols-4">
         {/* Area chart - 3 cols */}
-        <div className="col-span-3 card p-5">
+        <div className="card min-w-0 p-4 sm:p-5 xl:col-span-3">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-[13px] font-semibold text-white">Review Trends</h2>
@@ -171,7 +171,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Issue pie - 1 col */}
-        <div className="col-span-1 card p-5">
+        <div className="card min-w-0 p-4 sm:p-5 xl:col-span-1">
           <h2 className="text-[13px] font-semibold text-white mb-1">Issues</h2>
           <p className="text-[11px] text-zinc-600 mb-3">By category</p>
           <ResponsiveContainer width="100%" height={140}>
@@ -204,9 +204,9 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Bento Row 3: Heatmap + Activity + Tools ── */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid min-w-0 grid-cols-1 gap-3 lg:grid-cols-2 xl:grid-cols-4">
         {/* Heatmap - 2 cols */}
-        <div className="col-span-2 card p-5">
+        <div className="card min-w-0 p-4 sm:p-5 lg:col-span-2 xl:col-span-2">
           <div className="flex items-center justify-between mb-3">
             <div>
               <h2 className="text-[13px] font-semibold text-white">Review Activity</h2>
@@ -217,7 +217,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Recent activity - 1 col */}
-        <div className="col-span-1 card p-5">
+        <div className="card min-w-0 p-4 sm:p-5 xl:col-span-1">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-[13px] font-semibold text-white">Activity</h2>
           </div>
@@ -240,7 +240,7 @@ export default function DashboardPage() {
         </div>
 
         {/* MCP Tools health - 1 col */}
-        <div className="col-span-1 card p-5">
+        <div className="card min-w-0 p-4 sm:p-5 xl:col-span-1">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-[13px] font-semibold text-white">MCP Tools</h2>
             <span className="badge-success">

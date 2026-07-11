@@ -16,11 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen min-w-0">
           <Sidebar />
-          <div className="flex-1 ml-[220px]">
+          <div className="min-w-0 flex-1 md:ml-[220px]">
             <Header />
-            <main className="p-6 bg-grid-subtle min-h-[calc(100vh-56px)]">
+            <main className="min-h-[calc(100vh-56px)] bg-grid-subtle p-4 pb-24 sm:p-6 sm:pb-24 md:pb-6">
               {children}
             </main>
           </div>

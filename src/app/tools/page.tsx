@@ -33,7 +33,7 @@ export default function ToolsPage() {
         <p className="text-zinc-500 text-[13px]">Model Context Protocol tools for analysis, deployment, and monitoring</p>
       </div>
 
-      <div className="flex gap-1">
+      <div className="flex flex-wrap gap-1">
         {categories.map((c) => (
           <button key={c} onClick={() => setCatFilter(c)}
             className={`px-3 py-1.5 rounded-lg text-[12px] font-medium capitalize transition-all ${

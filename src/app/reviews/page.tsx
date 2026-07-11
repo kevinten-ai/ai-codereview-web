@@ -21,7 +21,7 @@ export default function ReviewsPage() {
   return (
     <div className="space-y-4 animate-fade-in max-w-[1400px]">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-lg font-semibold text-white">Code Reviews</h1>
           <p className="text-zinc-500 text-[13px]">Manage and track AI-powered code reviews</p>
@@ -33,7 +33,7 @@ export default function ReviewsPage() {
       </div>
 
       {/* Filters */}
-      <div className="flex gap-1">
+      <div className="flex flex-wrap gap-1">
         {(['all', 'completed', 'processing', 'pending', 'failed'] as const).map((s) => (
           <button key={s} onClick={() => setFilter(s)}
             className={`px-3 py-1.5 rounded-lg text-[12px] font-medium transition-all ${
@@ -46,8 +46,8 @@ export default function ReviewsPage() {
       </div>
 
       {/* Table */}
-      <div className="card overflow-hidden">
-        <table className="w-full">
+      <div className="card overflow-x-auto">
+        <table className="min-w-[760px] w-full">
           <thead>
             <tr className="border-b border-white/5">
               {['Review', 'Branch', 'Status', 'Score', 'Issues', 'Time', ''].map((h) => (

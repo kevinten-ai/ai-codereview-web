@@ -31,13 +31,13 @@ export default function SettingsPage() {
         <p className="text-zinc-500 text-[13px]">Manage your preferences, API tokens, and notifications</p>
       </div>
 
-      <div className="flex gap-6">
-        <div className="w-44 flex-shrink-0 space-y-0.5">
+      <div className="flex min-w-0 flex-col gap-4 lg:flex-row lg:gap-6">
+        <div className="flex w-full gap-1 overflow-x-auto lg:block lg:w-44 lg:flex-shrink-0 lg:space-y-0.5">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] font-medium transition-all ${
+              className={`flex flex-shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium transition-all lg:w-full ${
                 activeTab === tab.id
                   ? 'bg-zinc-800 text-white'
                   : 'text-zinc-600 hover:text-zinc-400'
@@ -50,9 +50,9 @@ export default function SettingsPage() {
         </div>
 
         {/* Content */}
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           {activeTab === 'general' && (
-            <div className="card p-6 space-y-5">
+            <div className="card space-y-5 p-4 sm:p-6">
               <div>
                 <h2 className="text-[14px] font-semibold text-white mb-0.5">General Settings</h2>
                 <p className="text-[11px] text-zinc-600">Configure your portal preferences</p>
@@ -109,8 +109,8 @@ export default function SettingsPage() {
 
           {activeTab === 'tokens' && (
             <div className="space-y-6">
-              <div className="card p-8">
-                <div className="flex items-center justify-between mb-6">
+              <div className="card p-4 sm:p-8">
+                <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <h2 className="text-lg font-semibold text-white mb-1">API Tokens</h2>
                     <p className="text-xs text-zinc-500">Manage tokens for API access and CI/CD integration</p>
@@ -125,17 +125,17 @@ export default function SettingsPage() {
 
                 <div className="space-y-3">
                   {mockTokens.map((token) => (
-                    <div key={token.id} className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all group">
-                      <div className="flex items-center gap-4">
+                    <div key={token.id} className="group flex flex-col gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="flex min-w-0 items-center gap-3 sm:gap-4">
                         <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500/20 to-blue-500/20 flex items-center justify-center">
                           <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
                           </svg>
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <p className="text-sm text-zinc-200 font-medium">{token.name}</p>
-                          <div className="flex items-center gap-3 mt-1">
-                            <code className="text-[11px] text-zinc-500 font-mono">
+                          <div className="mt-1 flex min-w-0 items-center gap-3">
+                            <code className="truncate font-mono text-[11px] text-zinc-500">
                               {token.token.substring(0, 12)}...{token.token.slice(-4)}
                             </code>
                             <button
@@ -172,7 +172,7 @@ export default function SettingsPage() {
               </div>
 
               {/* API Documentation hint */}
-              <div className="card p-6">
+              <div className="card p-4 sm:p-6">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -191,7 +191,7 @@ export default function SettingsPage() {
           )}
 
           {activeTab === 'notifications' && (
-            <div className="card p-8 space-y-6">
+            <div className="card space-y-6 p-4 sm:p-8">
               <div>
                 <h2 className="text-lg font-semibold text-white mb-1">Notification Preferences</h2>
                 <p className="text-xs text-zinc-500">Choose what notifications you receive</p>

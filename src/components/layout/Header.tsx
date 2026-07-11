@@ -60,7 +60,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="h-14 flex items-center justify-between px-6 border-b border-white/5 sticky top-0 z-20 bg-[#09090b]/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-20 flex h-14 items-center justify-between border-b border-white/5 bg-[#09090b]/80 px-4 backdrop-blur-xl sm:px-6">
         {/* Search trigger */}
         <button
           onClick={() => { setCmdOpen(true); setQuery(''); setSelectedIndex(0); }}
@@ -70,7 +70,7 @@ export default function Header() {
             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
           <span className="text-[13px]">Search...</span>
-          <kbd className="text-[10px] text-zinc-600 bg-zinc-800 px-1.5 py-0.5 rounded ml-8 font-mono">
+          <kbd className="ml-8 hidden rounded bg-zinc-800 px-1.5 py-0.5 font-mono text-[10px] text-zinc-600 sm:block">
             ⌘K
           </kbd>
         </button>
@@ -89,8 +89,8 @@ export default function Header() {
       {/* Command Palette */}
       {cmdOpen && (
         <div className="cmd-backdrop" onClick={() => setCmdOpen(false)}>
-          <div className="flex items-start justify-center pt-[20vh]">
-            <div className="cmd-panel" onClick={(e) => e.stopPropagation()} onKeyDown={handleCmdKeyDown}>
+          <div className="flex items-start justify-center px-4 pt-[12vh] sm:pt-[20vh]">
+            <div className="cmd-panel max-w-full" onClick={(e) => e.stopPropagation()} onKeyDown={handleCmdKeyDown}>
               {/* Input */}
               <div className="flex items-center gap-3 px-4 border-b border-white/5">
                 <svg className="w-4 h-4 text-zinc-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">

@@ -14,7 +14,7 @@ const sections = [
           <p className="text-sm text-zinc-400 leading-relaxed mb-3">
             Navigate to the &quot;Code Reviews&quot; page and click &quot;New Review&quot;. Fill in the repository URL, branch, and optionally a specific commit hash.
           </p>
-          <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 font-mono text-xs text-zinc-400">
+          <div className="overflow-x-auto rounded-xl border border-white/5 bg-white/[0.02] p-4 font-mono text-xs text-zinc-400">
             <span className="text-emerald-400">POST</span> /api/reviews<br />
             {'{'}<br />
             &nbsp;&nbsp;<span className="text-blue-400">&quot;title&quot;</span>: <span className="text-amber-400">&quot;Auth Module Review&quot;</span>,<br />
@@ -188,13 +188,13 @@ export default function DocsPage() {
         <p className="text-zinc-500 text-[13px]">Guides, API reference, and best practices</p>
       </div>
 
-      <div className="flex gap-6">
-        <div className="w-44 flex-shrink-0 space-y-0.5">
+      <div className="flex min-w-0 flex-col gap-4 lg:flex-row lg:gap-6">
+        <div className="flex w-full gap-1 overflow-x-auto lg:block lg:w-44 lg:flex-shrink-0 lg:space-y-0.5">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => setActiveSection(section.id)}
-              className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] font-medium transition-all ${
+              className={`flex flex-shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium transition-all lg:w-full ${
                 activeSection === section.id
                   ? 'bg-zinc-800 text-white'
                   : 'text-zinc-600 hover:text-zinc-400'
@@ -206,7 +206,7 @@ export default function DocsPage() {
           ))}
         </div>
 
-        <div className="flex-1 card p-6">
+        <div className="card min-w-0 flex-1 p-4 sm:p-6">
           <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-white/5">
             <div className="w-7 h-7 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400">
               {currentSection.icon}

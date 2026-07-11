@@ -38,7 +38,7 @@ export default function ReportsPage() {
 
   return (
     <div className="space-y-4 animate-fade-in max-w-[1400px]">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-lg font-semibold text-white">Analytics</h1>
           <p className="text-zinc-500 text-[13px]">Code quality insights and performance metrics</p>
@@ -58,7 +58,7 @@ export default function ReportsPage() {
       </div>
 
       {/* Summary */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {[
           { label: 'Total Reviews', value: '1,284', change: '+12.5%' },
           { label: 'Avg Score', value: '87.6', change: '+2.3' },
@@ -76,8 +76,8 @@ export default function ReportsPage() {
       </div>
 
       {/* Charts row 1 */}
-      <div className="grid grid-cols-2 gap-3">
-        <div className="card p-5">
+      <div className="grid min-w-0 grid-cols-1 gap-3 xl:grid-cols-2">
+        <div className="card min-w-0 p-4 sm:p-5">
           <h2 className="text-[13px] font-semibold text-white mb-0.5">Review Volume & Quality</h2>
           <p className="text-[11px] text-zinc-600 mb-4">Monthly trends</p>
           <ResponsiveContainer width="100%" height={260}>
@@ -94,7 +94,7 @@ export default function ReportsPage() {
             </AreaChart>
           </ResponsiveContainer>
         </div>
-        <div className="card p-5">
+        <div className="card min-w-0 p-4 sm:p-5">
           <h2 className="text-[13px] font-semibold text-white mb-0.5">Issues Discovered</h2>
           <p className="text-[11px] text-zinc-600 mb-4">Monthly count</p>
           <ResponsiveContainer width="100%" height={260}>
@@ -113,8 +113,8 @@ export default function ReportsPage() {
       </div>
 
       {/* Charts row 2 */}
-      <div className="grid grid-cols-3 gap-3">
-        <div className="card p-5">
+      <div className="grid min-w-0 grid-cols-1 gap-3 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="card min-w-0 p-4 sm:p-5">
           <h2 className="text-[13px] font-semibold text-white mb-0.5">Issue Distribution</h2>
           <p className="text-[11px] text-zinc-600 mb-3">By category</p>
           <ResponsiveContainer width="100%" height={180}>
@@ -143,7 +143,7 @@ export default function ReportsPage() {
           </div>
         </div>
 
-        <div className="card p-5">
+        <div className="card min-w-0 p-4 sm:p-5">
           <h2 className="text-[13px] font-semibold text-white mb-0.5">Quality Radar</h2>
           <p className="text-[11px] text-zinc-600 mb-3">Multi-dimensional analysis</p>
           <ResponsiveContainer width="100%" height={260}>
@@ -156,7 +156,7 @@ export default function ReportsPage() {
           </ResponsiveContainer>
         </div>
 
-        <div className="card p-5">
+        <div className="card min-w-0 p-4 sm:p-5">
           <h2 className="text-[13px] font-semibold text-white mb-0.5">Repo Rankings</h2>
           <p className="text-[11px] text-zinc-600 mb-3">By review count</p>
           <div className="space-y-2.5">

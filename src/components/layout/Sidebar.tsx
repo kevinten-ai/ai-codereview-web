@@ -55,9 +55,11 @@ const navSections = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const mobileItems = navSections.flatMap((section) => section.items);
 
   return (
-    <aside className="sidebar fixed left-0 top-0 h-screen w-[220px] z-30 flex flex-col">
+    <>
+    <aside className="sidebar fixed left-0 top-0 z-30 hidden h-screen w-[220px] flex-col md:flex">
       {/* Logo */}
       <div className="h-14 flex items-center gap-2.5 px-5">
         <div className="w-6 h-6 rounded-md bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
@@ -116,5 +118,24 @@ export default function Sidebar() {
         </div>
       </div>
     </aside>
+    <nav aria-label="Mobile navigation" className="fixed inset-x-3 bottom-3 z-40 grid grid-cols-6 rounded-xl border border-white/10 bg-[#111114]/95 p-1 shadow-2xl backdrop-blur-xl md:hidden">
+      {mobileItems.map((item) => {
+        const isActive = pathname === item.href || pathname?.startsWith(item.href + '/');
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            aria-label={item.label}
+            className={cn(
+              'flex min-h-11 items-center justify-center rounded-lg transition-colors',
+              isActive ? 'bg-white/[0.08] text-violet-400' : 'text-zinc-600 hover:text-zinc-300',
+            )}
+          >
+            {item.icon}
+          </Link>
+        );
+      })}
+    </nav>
+    </>
   );
 }
