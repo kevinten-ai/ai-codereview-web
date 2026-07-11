@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 
 const mockTokens = [
-  { id: 't1', name: 'Production API', token: 'aicr_prod_k8x9m2n4p7q1r3s5', status: 'active', createdAt: '2026-01-15', lastUsed: '2026-03-31' },
-  { id: 't2', name: 'Staging Environment', token: 'aicr_stg_w6y8a1b3c5d7e9f2', status: 'active', createdAt: '2026-02-20', lastUsed: '2026-03-28' },
-  { id: 't3', name: 'CI/CD Pipeline', token: 'aicr_ci_g4h6i8j1k3l5m7n9', status: 'inactive', createdAt: '2025-11-10', lastUsed: '2026-02-15' },
+  { id: 't1', name: 'Production API', token: 'example-production-token', status: 'active', createdAt: '2026-01-15', lastUsed: '2026-03-31' },
+  { id: 't2', name: 'Staging Environment', token: 'example-staging-token', status: 'active', createdAt: '2026-02-20', lastUsed: '2026-03-28' },
+  { id: 't3', name: 'CI/CD Pipeline', token: 'example-ci-token', status: 'inactive', createdAt: '2025-11-10', lastUsed: '2026-02-15' },
 ];
 
 export default function SettingsPage() {
